@@ -1,16 +1,13 @@
 package com.hamit.hibernate;
 
-import java.util.ArrayList;
-
 public class HibernateTestMain {
 
 	public static void main(String[] args) {
 
 		// create
-		// StudentEntity studentEntity = new StudentEntity("Hamit mizrak", "root123",
-		// "hamitmizrak@gmail.com");
-		// StudentController studentController = new StudentController();
-		// studentController.create(studentEntity);
+		StudentEntity studentEntity = new StudentEntity("Hamit mizrak", "root123", "hamitmizrak@gmail.com");
+		StudentController studentController = new StudentController();
+		studentController.create(studentEntity);
 
 		// find
 		// StudentController studentController = new StudentController();
@@ -47,11 +44,11 @@ public class HibernateTestMain {
 		// System.out.println(count);
 
 		// multiResult
-		StudentController studentController = new StudentController();
-		ArrayList<StudentEntity> list = studentController.list();
-		for (StudentEntity temp : list) {
-			System.out.println(temp);
-		}
+		// StudentController studentController = new StudentController();
+		// ArrayList<StudentEntity> list = studentController.list();
+		// for (StudentEntity temp : list) {
+		// System.out.println(temp);
+		// }
 
 	}
 
