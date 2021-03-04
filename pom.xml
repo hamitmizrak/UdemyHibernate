@@ -20,7 +20,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.6.Final</version>
-		</dependency> 
+		</dependency>
 
 		<!-- slf4j -> log4j bridge (some libraries use slf4j) -->
 		<dependency>
@@ -30,7 +30,11 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		
 	</dependencies>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
 </project>
