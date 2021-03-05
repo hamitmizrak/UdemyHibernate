@@ -4,6 +4,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.hamit.anotation.EntityTutorials;
+import com.hamit.relation.Student;
+import com.hamit.relation.Teacher;
 
 //singleton design pattern
 public class HibernateUtils {
@@ -15,6 +17,8 @@ public class HibernateUtils {
 			Configuration configuration = new Configuration();
 			configuration.addAnnotatedClass(EntityTutorials.class);
 			configuration.addAnnotatedClass(StudentEntity.class);
+			configuration.addAnnotatedClass(Student.class);
+			configuration.addAnnotatedClass(Teacher.class);
 
 			SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return sessionFactory;

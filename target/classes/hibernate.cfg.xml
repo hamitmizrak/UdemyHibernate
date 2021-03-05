@@ -4,7 +4,7 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-   
+
         <!-- database connection -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.password">root</property>
@@ -22,7 +22,7 @@
 
 		<!-- HQL ile SQL dönüşümünü sağlar dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-
+		
 
 		<!--Database kontrolu -->
 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
