@@ -1,14 +1,10 @@
-package com.hamit.relation;
+package com.hamit.relation.manytoone;
 
-import org.hibernate.Session;
-
-import com.hamit.hibernate.HibernateUtils;
-
-public class RelationTestMain {
+public class RelationManyToOneTestMain {
 
 	public static void main(String[] args) {
 
-		// create
+		// // create
 		// Teacher teacher = new Teacher("Hamit ", "Mızrak");
 		// teacher.setStudentList(new ArrayList<Student>());
 		//
@@ -48,17 +44,41 @@ public class RelationTestMain {
 		// session.persist(teacher2);
 		// session.getTransaction().commit();
 
-		// find
-		Session session = HibernateUtils.getSessionfactory().openSession();
-		long id = 2;
-		Teacher teacher = session.find(Teacher.class, id);
-		System.out.println("Öğretmen" + "\n" + teacher.getTeacherId() + "\t" + teacher.getTeacherName() + "\t"
-				+ teacher.getTeacherSurname() + "\nÖğrenciler");
+		// find (Öğretmenin Öğrencileri)
+		// Session session = HibernateUtils.getSessionfactory().openSession();
+		// long id = 2;
+		// Teacher teacher = session.find(Teacher.class, id);
+		// System.out.println("Öğretmen" + "\n" + teacher.getTeacherId() + "\t" +
+		// teacher.getTeacherName() + "\t"
+		// + teacher.getTeacherSurname() + "\nÖğrenciler");
+		//
+		// for (Student student : teacher.getStudentList()) {
+		// System.out.println(
+		// student.getStudentId() + "\t" + student.getStudentName() + "\t" +
+		// student.getStudentSurname());
+		// }
 
-		for (Student student : teacher.getStudentList()) {
-			System.out.println(
-					student.getStudentId() + "\t" + student.getStudentName() + "\t" + student.getStudentSurname());
-		}
+		// find (Join) (Öğrencilerin Öğretmeni)
+		// select * from teachertable inner join studenttable on teachertable.teacherId=
+		// studenttable.studentId
+		// String sql = " select student from Student as student where
+		// student.teacher.teacherId=1 ";
+		// Session session = HibernateUtils.getSessionfactory().openSession();
+		//
+		// TypedQuery<Student> typedQuery = session.createQuery(sql, Student.class);
+		// List<Student> studentList = typedQuery.getResultList();
+		//
+		// for (Student student : studentList) {
+		// System.out.println(student.getStudentId() + "\t" + student.getStudentName() +
+		// "\t"
+		// + student.getStudentSurname() + "\t" + student.getTeacher().getTeacherId() +
+		// "\t"
+		// + student.getTeacher().getTeacherName() + "\t" +
+		// student.getTeacher().getTeacherSurname()
+		//
+		// );
+		// }
+
 	}
 
 }

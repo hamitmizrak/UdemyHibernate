@@ -1,4 +1,4 @@
-package com.hamit.relation;
+package com.hamit.relation.manytoone;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-// 1
+// 1 (olmazsa olmaz budur)
 @Entity
 @Table(name = "teacherTable")
 public class Teacher implements Serializable {

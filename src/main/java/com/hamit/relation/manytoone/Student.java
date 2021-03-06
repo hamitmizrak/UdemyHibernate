@@ -1,4 +1,4 @@
-package com.hamit.relation;
+package com.hamit.relation.manytoone;
 
 import java.io.Serializable;
 
