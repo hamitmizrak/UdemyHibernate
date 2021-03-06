@@ -31,7 +31,7 @@ public class Teacher implements Serializable {
 	private String teacherSurname;
 
 	// composition
-	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Student> studentList;
 
 	// parametresiz constructor
