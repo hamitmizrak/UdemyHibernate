@@ -31,11 +31,11 @@ public class RelationOneToOneTestMain {
 
 		// find (Join)
 		System.out.println("++++++++++++++++++++++++");
-		Session session = HibernateUtils.getSessionfactory().openSession();
-		long id = 5;
+		Session session2 = HibernateUtils.getSessionfactory().openSession();
+		long id2 = 5;
 		String sql = "select book from BookClass as book where book.writer.writerId=:key";
-		TypedQuery<BookClass> typedQuery = session.createQuery(sql, BookClass.class);
-		typedQuery.setParameter("key", id);
+		TypedQuery<BookClass> typedQuery = session2.createQuery(sql, BookClass.class);
+		typedQuery.setParameter("key", id2);
 
 		BookClass bookClass2 = typedQuery.getSingleResult();
 		System.out.println(bookClass2.getBookId() + "\t" + bookClass2.getBookName() + "\t" + bookClass2.getBookYear()
