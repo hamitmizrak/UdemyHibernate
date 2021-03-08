@@ -5,6 +5,8 @@ import org.hibernate.cfg.Configuration;
 
 import com.hamit.anotation.EntityTutorials;
 import com.hamit.attributes.Bilgisayar;
+import com.hamit.embedded.BilgisayarDili;
+import com.hamit.embedded.BilgisayarTeknolojileri;
 import com.hamit.index.Eticaret;
 import com.hamit.relation.manytoone.Student;
 import com.hamit.relation.manytoone.Teacher;
@@ -27,6 +29,8 @@ public class HibernateUtils {
 			configuration.addAnnotatedClass(WriterClass.class);
 			configuration.addAnnotatedClass(Bilgisayar.class);
 			configuration.addAnnotatedClass(Eticaret.class);
+			configuration.addAnnotatedClass(BilgisayarTeknolojileri.class);
+			configuration.addAnnotatedClass(BilgisayarDili.class);
 
 			SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return sessionFactory;
