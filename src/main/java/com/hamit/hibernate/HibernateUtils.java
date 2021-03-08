@@ -10,6 +10,7 @@ import com.hamit.embedded.BilgisayarTeknolojileri;
 import com.hamit.emmeddedId.Kitap;
 import com.hamit.emmeddedId.Memleket;
 import com.hamit.emmeddedId.Yazar;
+import com.hamit.enums.EnumEntity;
 import com.hamit.index.Eticaret;
 import com.hamit.relation.manytoone.Student;
 import com.hamit.relation.manytoone.Teacher;
@@ -37,6 +38,7 @@ public class HibernateUtils {
 			configuration.addAnnotatedClass(Kitap.class);
 			configuration.addAnnotatedClass(Yazar.class);
 			configuration.addAnnotatedClass(Memleket.class);
+			configuration.addAnnotatedClass(EnumEntity.class);
 
 			SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return sessionFactory;
