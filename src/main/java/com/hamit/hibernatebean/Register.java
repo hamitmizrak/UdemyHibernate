@@ -1,6 +1,7 @@
 package com.hamit.hibernatebean;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,6 +39,30 @@ public class Register implements Serializable {
 		this.nameSurname = nameSurname;
 		this.emailAddress = emailAddress;
 		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "Register [id=" + id + ", nameSurname=" + nameSurname + ", emailAddress=" + emailAddress + ", password="
+				+ password + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(emailAddress, id, nameSurname, password);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Register other = (Register) obj;
+		return Objects.equals(emailAddress, other.emailAddress) && id == other.id
+				&& Objects.equals(nameSurname, other.nameSurname) && Objects.equals(password, other.password);
 	}
 
 	// getter and setters

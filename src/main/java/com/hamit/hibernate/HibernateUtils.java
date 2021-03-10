@@ -11,6 +11,8 @@ import com.hamit.emmeddedId.Kitap;
 import com.hamit.emmeddedId.Memleket;
 import com.hamit.emmeddedId.Yazar;
 import com.hamit.enums.EnumEntity;
+import com.hamit.hibernatebean.Register;
+import com.hamit.hql.BilgisayarHql;
 import com.hamit.index.Eticaret;
 import com.hamit.relation.manytoone.Student;
 import com.hamit.relation.manytoone.Teacher;
@@ -39,6 +41,8 @@ public class HibernateUtils {
 			configuration.addAnnotatedClass(Yazar.class);
 			configuration.addAnnotatedClass(Memleket.class);
 			configuration.addAnnotatedClass(EnumEntity.class);
+			configuration.addAnnotatedClass(Register.class);
+			configuration.addAnnotatedClass(BilgisayarHql.class);
 
 			SessionFactory sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return sessionFactory;
